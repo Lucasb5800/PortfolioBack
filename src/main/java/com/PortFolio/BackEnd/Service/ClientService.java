@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.MiAplicacion.PrimerProyecto.Service;
+package com.PortFolio.BackEnd.Service;
 
-import com.MiAplicacion.PrimerProyecto.Entity.Cliente;
-import com.MiAplicacion.PrimerProyecto.Repository.ClienteRepository;
+import com.PortFolio.BackEnd.Entity.Cliente;
+import com.PortFolio.BackEnd.Repository.ClienteRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

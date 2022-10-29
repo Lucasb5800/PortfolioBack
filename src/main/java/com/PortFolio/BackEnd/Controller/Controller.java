@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.MiAplicacion.PrimerProyecto.Controller;
+package com.PortFolio.BackEnd.Controller;
 //NOTA: No usar HTTPS solo HTTP
-import com.MiAplicacion.PrimerProyecto.Entity.Cliente;
-import com.MiAplicacion.PrimerProyecto.Service.IClienteService;
+import com.PortFolio.BackEnd.Entity.Cliente;
+import com.PortFolio.BackEnd.Service.IClienteService;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.MiAplicacion</groupId>
-	<artifactId>PrimerProyecto</artifactId>
+	<artifactId>PortFolio-BackEnd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PrimerProyecto</name>
+	<name>PortFolio-BackEnd</name>
 	<description>Esta es mi primera aplicación SpringBoot</description>
 	<properties>
 		<java.version>17</java.version>
