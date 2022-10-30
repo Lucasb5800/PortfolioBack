@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.MiAplicacion</groupId>
-	<artifactId>PrimerProyecto</artifactId>
+	<artifactId>PortFolio-BackEnd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PrimerProyecto</name>
+	<name>PortFolio-BackEnd</name>
 	<description>Esta es mi primera aplicación SpringBoot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -21,7 +21,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+                <dependency>
+                    <groupId>org.hibernate.validator</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                    <version>6.0.9.Final</version>
+                </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -53,6 +57,12 @@
 	 <dependency>
 	  <groupId>org.hibernate</groupId>
 	  <artifactId>hibernate-core</artifactId>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-lang3</artifactId>
+	  <version>3.8.1</version>
 	  <type>jar</type>
 	 </dependency>
 	</dependencies>
