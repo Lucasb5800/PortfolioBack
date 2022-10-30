@@ -6,13 +6,13 @@ package com.PortFolio.BackEnd.Controller;
 
 import com.PortFolio.BackEnd.Map.EducationMap;
 import com.PortFolio.BackEnd.Entity.Education;
-import com.PortFolio.BackEnd.Controller.MessageControllerController;
+import com.PortFolio.BackEnd.Controller.MessageController;
 import com.PortFolio.BackEnd.Service.EducationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -89,12 +89,13 @@ public class EducationController {
             return new ResponseEntity(new MessageController("Este campo no puede estar vacío."), HttpStatus.BAD_REQUEST);
         }
         
-        Education educacion = eduServ.getOne(id).get();
+        Education education = eduServ.getOne(id).get();
         
-        educacion.setName(eduMap.getName());
-        educacion.setDescription(eduMap.getDescription());
         
-        eduServ.save(educacion);
+        education.setName(eduMap.getName());
+        education.setDescription(eduMap.getDescription());
+        
+        eduServ.save(education);
         
         return new ResponseEntity(new MessageController("Educación actualizada correctamente."), HttpStatus.OK);
     }

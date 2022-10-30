@@ -30,4 +30,9 @@ public class Header {
     public Header(String urlProfileImg) {
         this.urlProfileImg = urlProfileImg;
     }
+    
+    public void setUrlProfileImg(String urlProfileImg){
+        this.urlProfileImg = urlProfileImg;
+    }
+    
 }

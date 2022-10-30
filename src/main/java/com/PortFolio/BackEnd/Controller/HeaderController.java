@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,7 +62,7 @@ public class HeaderController {
         
         Header header = servHeader.getOne(id).get();
         
-        header.setUrlProfileImg(HeaderMap.urlProfileImg());
+        header.setUrlProfileImg(headerMap.urlProfileImg());
         
         servHeader.save(header);
         

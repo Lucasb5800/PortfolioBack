@@ -24,4 +24,8 @@ public class HeaderMap {
     public HeaderMap(String urlProfileImg) {
         this.urlProfileImg = urlProfileImg;
     }  
+
+    public String urlProfileImg() {
+        return this.urlProfileImg;
+    }
 }
