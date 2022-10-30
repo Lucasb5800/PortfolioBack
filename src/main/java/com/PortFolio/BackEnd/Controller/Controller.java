@@ -4,8 +4,7 @@
  */
 package com.PortFolio.BackEnd.Controller;
 //NOTA: No usar HTTPS solo HTTP
-import com.PortFolio.BackEnd.Entity.Cliente;
-import com.PortFolio.BackEnd.Service.IClienteService;
+import com.PortFolio.BackEnd.Entity.Client;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 //Para pasar las variables por el Body de la request POST
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.PortFolio.BackEnd.Service.IClientService;
 /**
  * @author Lucas5800
  */
@@ -38,78 +38,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Controller {
     
     //Este fragmento de codigo es para implementar la inyeccion de dependencias
-    @Autowired IClienteService clienteService;
+    @Autowired IClientService clienteService;
     
-    @PostMapping ("/new/cliente")
-    public void nuevoCliente(@RequestBody Cliente cli){
-        clienteService.nuevoCliente(cli);
+    @PostMapping ("/new/client")
+    public void saveClient(@RequestBody Client cli){
+        clienteService.saveClient(cli);
     }    
     
-    @GetMapping ("/traer/cliente")
+    @GetMapping ("/get/client")
     @ResponseBody 
-    public List <Cliente> traerClientes(){
+    public List <Client> getClients(){
         
-        return clienteService.traerClientes();
+        return clienteService.getClients();
     }
     
     @DeleteMapping ("/delete/{id}")
-    public void borrarCliente(@PathVariable Long id)
+    public void deleteClient(@PathVariable Integer id)
     {
-        clienteService.borrarCliente(id);
+        clienteService.deleteClient(id);
     }
-    
-////    Todo el codigo Comentado es el mismo proceso de arriba pero hecho
-////     a mano sin inyecciones de dependencias
-//    
-//    
-//    //Para variables en el path
-//    @GetMapping ("/hola/{nombre}/{edad}/{profesion}")
-//    public String decirHola2(
-//            @PathVariable String nombre,
-//            @PathVariable int edad,
-//            @PathVariable String profesion)
-//    {
-//        return ("Hello World!!. Tu nombre es " + nombre +
-//                "tu edad es " + edad + "y tu profesion es " + profesion);
-//    }
-//    
-//    
-//    //Para variables en parametros
-//    @GetMapping ("/hola")    
-//    public String decirHola(
-//            @RequestParam String nombre,
-//            @RequestParam int edad,
-//            @RequestParam String profesion)   
-//    {
-//        return ("Hello World!!. Tu nombre es " + nombre +
-//                " tu edad es " + edad + " y tu profesion es " + profesion);
-//    }
-//    
-//    //Para Post
-//    @PostMapping ("/cliente")
-//    public void nuevoCliente(@RequestBody Cliente cli){
-//        System.out.println("Datos cliente: " + cli.getNombre() + 
-//                "Apellido: " + cli.getApellido());
-//    }
-//    
-//    //Para responder con listas
-//    @GetMapping ("/cliente/traer")
-//    @ResponseBody      
-//    public List <Cliente> traerClientes(){
-//        
-//        List <Cliente> listaClientes = new ArrayList<Cliente>();
-//        listaClientes.add(new Cliente(1L,"Zlatan","Ibrahimovic"));
-//        listaClientes.add(new Cliente(2L,"Cristiano","Ronaldo"));
-//        listaClientes.add(new Cliente(3L,"Lionel","Messi"));
-//        return listaClientes;
-//    }
-//    
-//    //Para responder con entidades
-//    @GetMapping ("/pruebaresponse")    
-//    public ResponseEntity<String> traerRespuesta(){
-//        
-//        return new ResponseEntity<>("Esto es un mensaje Response Entity", HttpStatus.OK);
-//    }
-    
-    
+   
 }

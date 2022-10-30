@@ -4,41 +4,41 @@
  */
 package com.PortFolio.BackEnd.Service;
 
-import com.PortFolio.BackEnd.Entity.Cliente;
-import com.PortFolio.BackEnd.Repository.ClienteRepository;
+import com.PortFolio.BackEnd.Entity.Client;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.PortFolio.BackEnd.Repository.ClientRepository;
 
 /**
  *
  * @author Lucas5800
  */
 @Service
-public class ClientService implements IClienteService {
+public class ClientService implements IClientService {
 
-    @Autowired ClienteRepository cliRepo;
+    @Autowired ClientRepository cliRepo;
             
     @Override
-    public List<Cliente> traerClientes() {
-        List<Cliente> Clientes = cliRepo.findAll();
-        return Clientes;
+    public List<Client> getClients() {
+        List<Client> Client = cliRepo.findAll();
+        return Client;
     }
 
     @Override
-    public void nuevoCliente(Cliente cli) {
+    public void saveClient(Client cli) {
         cliRepo.save(cli);
     }
 
     @Override
-    public void borrarCliente(Long id) {
+    public void deleteClient(Integer id) {
         cliRepo.deleteById(id);
     }
 
     @Override
-    public Cliente buscarCliente(Long id) {
-        Cliente cliente = cliRepo.findById(id).orElse(null);
-        return cliente;
+    public Client findClient(Integer id) {
+        Client client = cliRepo.findById(id).orElse(null);
+        return client;
     }
     
 }

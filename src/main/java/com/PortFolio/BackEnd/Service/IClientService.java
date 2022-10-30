@@ -4,17 +4,17 @@
  */
 package com.PortFolio.BackEnd.Service;
 
-import com.PortFolio.BackEnd.Entity.Cliente;
+import com.PortFolio.BackEnd.Entity.Client;
 import java.util.List;
 
 /**
  *
  * @author Lucas5800
  */
-public interface IClienteService {
+public interface IClientService {
     
-    public List<Cliente> traerClientes();
-    public void nuevoCliente(Cliente cli);
-    public void borrarCliente(Long id);
-    public Cliente buscarCliente(Long id);
+    public List<Client> getClients();
+    public void saveClient(Client cli);
+    public void deleteClient(Integer id);
+    public Client findClient(Integer id);
 }

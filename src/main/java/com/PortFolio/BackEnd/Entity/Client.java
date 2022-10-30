@@ -19,10 +19,10 @@ import lombok.Setter;
  */
 @Getter @Setter
 @Entity
-public class Cliente {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     
     @NotBlank
     @Size(min = 1, max = 70, message = "Es demasiado corto o demasiado largo.")

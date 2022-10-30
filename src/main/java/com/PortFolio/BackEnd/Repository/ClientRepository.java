@@ -4,7 +4,7 @@
  */
 package com.PortFolio.BackEnd.Repository;
 
-import com.PortFolio.BackEnd.Entity.Cliente;
+import com.PortFolio.BackEnd.Entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author Lucas5800
  */
 @Repository
-public interface ClienteRepository extends JpaRepository <Cliente, Long> {
+public interface ClientRepository extends JpaRepository <Client, Integer> {
     
 }
