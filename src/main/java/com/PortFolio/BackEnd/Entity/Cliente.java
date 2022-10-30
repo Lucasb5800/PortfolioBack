@@ -4,12 +4,15 @@
  */
 package com.PortFolio.BackEnd.Entity;
 
-import lombok.Getter;
-import lombok.Setter;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 /**
  *
  * @author Lucas5800
@@ -18,27 +21,18 @@ import javax.persistence.GenerationType;
 @Entity
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id ;
-    private String nombre;
-    private String apellido;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     
-    public Cliente(Long pID, String pNombre, String pApellido)
-    { 
-        id =  pID ;
-        nombre = pNombre;
-        apellido = pApellido;
-    }
+    @NotBlank
+    @Size(min = 1, max = 70, message = "Es demasiado corto o demasiado largo.")
+    private String lastName;
     
-    public String getNombre(){
-        return nombre;
-    }
+    @NotBlank
+    @Size(min = 1, max = 70, message = "Es demasiado corto o demasiado largo.")
+    private String firstName;
     
-    public Long getID(){
-        return id;
-    }
-    
-    public String getApellido(){
-        return apellido;
-    }
+    @NotNull
+    @Size(min = 1, max = 200, message = "Es demasiado corto o demasiado largo.")
+    private String profileImg;
 }
